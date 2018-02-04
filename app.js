@@ -46,7 +46,8 @@ if(message.content.startsWith("/acceptat")){
 
 client.on("message", message => {
 if(message.content.startsWith("/color")){
-let arg = message.content.split(" ").slice(0)
+let arg1 = message.content.split(" ").slice(0)
+let arg = arg1[0]
 if(!arg || arg === "list") return message.author.send("**==== CULORI DISPONIBILE ====**\n**/color yellow** - galben\n**/color red** - rosu\n**/color blue** - albastru\n**/color purple** - violet\n**/color green** - verde\n**/color golden** - auriu\n**/color black** - negru\n**/color white** - alb\n**/color gray** gri\n**/color pink** - roz")
 let sender = message.author
 let yellow = message.guild.roles.find("name", "yellow");
