@@ -1,1 +1,1 @@
-worker: npm i chalk
+worker: node app.js
