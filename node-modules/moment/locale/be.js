@@ -4,13 +4,7 @@
 //! author: Praleska: http://praleska.pro/
 //! Author : Menelion Elensúle : https://github.com/Oire
 
-;(function (global, factory) {
-   typeof exports === 'object' && typeof module !== 'undefined'
-       && typeof require === 'function' ? factory(require('../moment')) :
-   typeof define === 'function' && define.amd ? define(['../moment'], factory) :
-   factory(global.moment)
-}(this, (function (moment) { 'use strict';
-
+import moment from '../moment';
 
 function plural(word, num) {
     var forms = word.split('_');
@@ -36,7 +30,7 @@ function relativeTimeWithPlural(number, withoutSuffix, key) {
     }
 }
 
-var be = moment.defineLocale('be', {
+export default moment.defineLocale('be', {
     months : {
         format: 'студзеня_лютага_сакавіка_красавіка_траўня_чэрвеня_ліпеня_жніўня_верасня_кастрычніка_лістапада_снежня'.split('_'),
         standalone: 'студзень_люты_сакавік_красавік_травень_чэрвень_ліпень_жнівень_верасень_кастрычнік_лістапад_снежань'.split('_')
@@ -130,6 +124,3 @@ var be = moment.defineLocale('be', {
     }
 });
 
-return be;
-
-})));
