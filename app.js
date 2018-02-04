@@ -22,6 +22,7 @@ client.on("guildMemberAdd", member => {
   member.addRole(defaultrole)
   member.addRole(default2role)
 });
+}
 
 client.on("message", message => {
 if(message.content.startsWith("/acceptat")){
