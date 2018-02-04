@@ -3,12 +3,8 @@ const client = new Discord.Client();
 const settings = require('./settings.json');
 const chalk = require('chalk');
 const fs = require('fs');
-const db = require('quick.db');
 const moment = require('moment');
 const prefix = "/"
-const Cleverbot = require("cleverbot-node");
-const clbot = new Cleverbot;
-clbot.configure({botapi: "CC5ufWjFWzd6OxviOF_qMC_W7Tg"});
 
 require('./util/eventLoader')(client);
 
@@ -93,4 +89,4 @@ client.on("guildMemberAdd", member => {
   member.addRole(default2role)
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login("NDA5MzcyODcwMjU5NjM4Mjcz.DVdpxw.IDql-6-5uGkCM8Z9gtFVGUcLnmk");
