@@ -134,7 +134,7 @@ const embed = new Discord.RichEmbed()
 client.on("message", message => {
 	if(message.content.startsWith("/say")){	
 if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("nu ai **acces** la aceasta comanda.")
-let mesaj = message.content.split("").slice(0)
+let mesaj = message.content.split(" ").slice(0)
 message.channel.send(mesaj)
 message.delete()
 }
