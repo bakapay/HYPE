@@ -112,7 +112,7 @@ message.guild.member(sender).removeRole(white)
 message.guild.member(sender).removeRole(gray)
 message.guild.member(sender).removeRole(pink)
 message.channel.send(":ballot_box_with_check:")}
-	
+}
 });
 
 client.on("message", message => {
