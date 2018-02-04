@@ -11,6 +11,10 @@ client.on("guildMemberRemove", member => {
   client.channels.get("409293635704848394").send("[-] " + member + ".")
 });
 
+client.on("guildMemberBan", member => {
+  client.channels.get("409293635704848394").send("[x] " + member + ".")
+});
+
 client.on("guildMemberAdd", member => {
   client.channels.get("409293635704848394").send("[+] " + member + ".")
   let defaultrole = member.guild.roles.find("name", "Hypers")
@@ -42,7 +46,8 @@ if(message.content.startsWith("/acceptat")){
 
 client.on("message", message => {
 	if(message.content.startsWith("/color")){
-let arg = message.content.split("").slice(0)
+let arg = message.content.split("").slice(1)
+if(!arg || arg === "list") return message.author.send("**==== CULORI DISPONIBILE ====**\n**/color yellow** - galben\n**/color red** - rosu\n**/color blue** - albastru\n**/color purple** - violet\n**/color green** - verde\n**/color golden** - auriu\n**/color black** - negru\n**/color white** - alb\n**/color gray** gri\n**/color pink** - roz")
 let sender = message.author
 let yellow = message.guild.roles.find("name", "yellow");
 let red = message.guild.roles.find("name", "red");
@@ -54,8 +59,6 @@ let black = message.guild.roles.find("name", "black");
 let white = message.guild.roles.find("name", "white");
 let gray = message.guild.roles.find("name", "gray");
 let pink = message.guild.roles.find("name", "pink");
-
-if(!arg || arg === "list") return message.author.send("**==== CULORI DISPONIBILE ====**\n**/color yellow** - galben\n**/color red** - rosu\n**/color blue** - albastru\n**/color purple** - violet\n**/color green** - verde\n**/color golden** - auriu\n**/color black** - negru\n**/color white** - alb\n**/color gray** gri\n**/color pink** - roz")
 	
 if(arg === "yellow") return message.guild.member(sender).addRole(yellow)
 if(arg === "red") return message.guild.member(sender).addRole(red)
@@ -67,23 +70,29 @@ if(arg === "black") return message.guild.member(sender).addRole(black)
 if(arg === "white") return message.guild.member(sender).addRole(white)
 if(arg === "gray") return message.guild.member(sender).addRole(gray)
 if(arg === "pink") return message.guild.member(sender).addRole(pink)
-	message.delete()
 }
 });
 
 client.on("message", message => {
 	if(message.content.startsWith("/leave")){
+if(message.member.hasPermission('MANAGE_SERVER')) return message.reply("detii o functie destul de mare, mai bine **nu ai parasi** serverul.")
         let kickMember = message.author
-	kickMember.send("Ai iesit de pe serverul **HYPEUNIVERSE**, daca vrei sa revii pe server, poti folosi link-ul de mai jos. \n:link: https://discord.gg/t6HGuCe")
+	kickMember.send("Ai iesit de pe serverul **HYPEUNIVERSE**, daca vrei sa revii pe server, poti folosi link-ul de mai jos. \n:link: https://discord.gg/t6HGuCe").then(
+  setTimeout(() => { 
 	message.guild.member(kickMember).kick()
+        }, 1000))
 }	
 });
 
 client.on("message", message => {
 	if(message.content.startsWith("/report")){
-	   let member = message.mentions.members.first();
-let motiv = message.content.split("").slice(1)
-let dovada = message.content.split("").slice(2)
+	   
+let member = message.mentions.members.first();
+let motiv1 = message.content.slice(1)
+let dovada1 = message.content.slice(2)
+
+let motiv = motiv1[1]
+let dovada = dovada1[2]
 
 if(!member) return message.reply("trebuie sa **mentionezi** persoana reclamata.")
 if(!motiv) return message.reply("trebuie sa **prezinti** un motiv, obligatoriu sa fie compus **dintr-un cuvant**.")
