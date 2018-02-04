@@ -92,7 +92,7 @@ let motiv1 = message.content.split(" ").slice(1)
 let dovada1 = message.content.split(" ").slice(2)
 
 let motiv = motiv1[1]
-let dovada = dovada1[2]
+let dovada = dovada1
 
 if(!member) return message.reply("trebuie sa **mentionezi** persoana reclamata.")
 if(!motiv) return message.reply("trebuie sa **prezinti** un motiv, obligatoriu sa fie compus **dintr-un cuvant**.")
