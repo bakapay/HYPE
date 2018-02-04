@@ -22,7 +22,6 @@ client.on("guildMemberAdd", member => {
   member.addRole(defaultrole)
   member.addRole(default2role)
 });
-}
 
 client.on("message", message => {
 if(message.content.startsWith("/acceptat")){
@@ -46,8 +45,8 @@ if(message.content.startsWith("/acceptat")){
 });
 
 client.on("message", message => {
-	if(message.content.startsWith("/color")){
-let arg = message.content.split("").slice(1)
+if(message.content.startsWith("/color")){
+let arg = message.content.split(" ").slice(1)
 if(!arg || arg === "list") return message.author.send("**==== CULORI DISPONIBILE ====**\n**/color yellow** - galben\n**/color red** - rosu\n**/color blue** - albastru\n**/color purple** - violet\n**/color green** - verde\n**/color golden** - auriu\n**/color black** - negru\n**/color white** - alb\n**/color gray** gri\n**/color pink** - roz")
 let sender = message.author
 let yellow = message.guild.roles.find("name", "yellow");
@@ -89,8 +88,8 @@ client.on("message", message => {
 	if(message.content.startsWith("/report")){
 	   
 let member = message.mentions.members.first();
-let motiv1 = message.content.slice(1)
-let dovada1 = message.content.slice(2)
+let motiv1 = message.content.split(" ").slice(1)
+let dovada1 = message.content.split(" ").slice(2)
 
 let motiv = motiv1[1]
 let dovada = dovada1[2]
