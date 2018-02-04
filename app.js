@@ -61,16 +61,43 @@ let white = message.guild.roles.find("name", "white");
 let gray = message.guild.roles.find("name", "gray");
 let pink = message.guild.roles.find("name", "pink");
 	
-if(arg === "yellow") return message.guild.member(sender).addRole(yellow)
-if(arg === "red") return message.guild.member(sender).addRole(red)
-if(arg === "blue") return message.guild.member(sender).addRole(blue)
-if(arg === "purple") return message.guild.member(sender).addRole(purple)
-if(arg === "green") return message.guild.member(sender).addRole(green)
-if(arg === "golden") return message.guild.member(sender).addRole(golden)
-if(arg === "black") return message.guild.member(sender).addRole(black)
-if(arg === "white") return message.guild.member(sender).addRole(white)
-if(arg === "gray") return message.guild.member(sender).addRole(gray)
-if(arg === "pink") return message.guild.member(sender).addRole(pink)
+if(arg === "yellow"){
+message.guild.member(sender).addRole(yellow) 
+message.channel.send(":ballot_box_with_check:")}
+	
+if(arg === "red"){
+message.guild.member(sender).addRole(red)
+message.channel.send(":ballot_box_with_check:")}
+	
+if(arg === "blue"){
+message.guild.member(sender).addRole(blue)
+message.channel.send(":ballot_box_with_check:")}
+
+if(arg === "purple"){
+message.guild.member(sender).addRole(purple)
+message.channel.send(":ballot_box_with_check:")}
+if(arg === "green"){
+message.guild.member(sender).addRole(green)
+message.channel.send(":ballot_box_with_check:")}
+	
+if(arg === "golden"){
+message.guild.member(sender).addRole(golden)
+message.channel.send(":ballot_box_with_check:")}
+	
+if(arg === "black"){
+message.guild.member(sender).addRole(black)
+message.channel.send(":ballot_box_with_check:")}
+	
+if(arg === "white"){ 
+message.guild.member(sender).addRole(white)
+message.channel.send(":ballot_box_with_check:")}
+	
+if(arg === "gray"){
+message.guild.member(sender).addRole(gray)
+message.channel.send(":ballot_box_with_check:")}
+if(arg === "pink"){
+message.guild.member(sender).addRole(pink)
+message.channel.send(":ballot_box_with_check:")}
 }
 });
 
