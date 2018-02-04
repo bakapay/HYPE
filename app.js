@@ -20,7 +20,7 @@ client.on("guildMemberAdd", member => {
 });
 
 client.on("message", message => {
-if(message.content.startsWith("/acceptat"){
+if(message.content.startsWith("/acceptat")){
   if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("nu ai acces.")
 
   let member = message.mentions.members.first();
@@ -41,7 +41,7 @@ if(message.content.startsWith("/acceptat"){
 });
 
 client.on("message", message => {
-	if(message.content.startsWith("/color"){
+	if(message.content.startsWith("/color")){
 let arg = message.content.split("").slice(0)
 let sender = message.author
 let yellow = message.guild.roles.find("name", "yellow");
@@ -72,7 +72,7 @@ if(arg === "pink") return message.guild.member(sender).addRole(pink)
 });
 
 client.on("message", message => {
-	if(message.content.startsWith("/leave"){
+	if(message.content.startsWith("/leave")){
         let kickMember = message.author
 	kickMember.send("Ai iesit de pe serverul **HYPEUNIVERSE**, daca vrei sa revii pe server, poti folosi link-ul de mai jos. \n:link: https://discord.gg/t6HGuCe")
 	message.guild.member(kickMember).kick()
@@ -80,7 +80,7 @@ client.on("message", message => {
 });
 
 client.on("message", message => {
-	if(message.content.startsWith("/report"){
+	if(message.content.startsWith("/report")){
 	   let member = message.mentions.members.first();
 let motiv = message.content.split("").slice(1)
 let dovada = message.content.split("").slice(2)
@@ -105,7 +105,7 @@ message.delete();
 	   });
 
 client.on("message", message => {
-	if(message.content.startsWith("/serverinfo"){
+	if(message.content.startsWith("/serverinfo")){
 const embed = new Discord.RichEmbed()
 	.setAuthor(message.guild, message.guild.iconURL)
 	.addField("Name", message.guild, true)
@@ -123,7 +123,7 @@ const embed = new Discord.RichEmbed()
 
 
 client.on("message", message => {
-	if(message.content.startsWith("/say"){	
+	if(message.content.startsWith("/say")){	
 if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("nu ai **acces** la aceasta comanda.")
 let mesaj = message.content.split("").slice(0)
 message.channel.send(mesaj)
