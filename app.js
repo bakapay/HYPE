@@ -95,10 +95,24 @@ message.channel.send(":ballot_box_with_check:")}
 if(arg === "gray"){
 message.guild.member(sender).addRole(gray)
 message.channel.send(":ballot_box_with_check:")}
+	
 if(arg === "pink"){
 message.guild.member(sender).addRole(pink)
 message.channel.send(":ballot_box_with_check:")}
-}
+
+if(arg === "none"){
+message.guild.member(sender).removeRole(yellow)
+message.guild.member(sender).removeRole(red)
+message.guild.member(sender).removeRole(blue)
+message.guild.member(sender).removeRole(purple)
+message.guild.member(sender).removeRole(green)
+message.guild.member(sender).removeRole(golden)
+message.guild.member(sender).removeRole(black)
+message.guild.member(sender).removeRole(white)
+message.guild.member(sender).removeRole(gray)
+message.guild.member(sender).removeRole(pink)
+message.channel.send(":ballot_box_with_check:")}
+	
 });
 
 client.on("message", message => {
