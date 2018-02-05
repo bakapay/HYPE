@@ -48,7 +48,7 @@ client.on("message", message => {
 if(message.content.startsWith("/color")){
 let arg1 = message.content.split(" ").slice(0)
 let arg = arg1[1]
-if(!arg || arg === "list") return message.author.send("**==== CULORI DISPONIBILE ====**\n**/color yellow** - galben\n**/color red** - rosu\n**/color blue** - albastru\n**/color purple** - violet\n**/color green** - verde\n**/color golden** - auriu\n**/color black** - negru\n**/color white** - alb\n**/color gray** gri\n**/color pink** - roz")
+if(!arg || arg === "list") return message.author.send("**==== CULORI DISPONIBILE ====**\n**/color yellow** - galben\n**/color red** - rosu\n**/color blue** - albastru\n**/color purple** - violet\n**/color green** - verde\n**/color golden** - auriu\n**/color black** - negru\n**/color white** - alb\n**/color gray** gri\n**/color pink** - roz\n Dacă folosiți comanda **/color none** , toate culorile deținute vor fi scoase.")
 let sender = message.author
 let yellow = message.guild.roles.find("name", "yellow");
 let red = message.guild.roles.find("name", "red");
@@ -171,6 +171,16 @@ const embed = new Discord.RichEmbed()
 	    message.channel.sendEmbed(embed)
 }
 });
+
+client.on("message", message => {
+let emoji = message.guild.emojis.find("name", "HUHypeSquad")
+let word = ["HYPE", "hype", "Hype", "HypeUniverse", "HYPEUNIVERSE", "hypeuniverse"];
+	if(message.channel.id === "409293338332889107"){
+	 message.react(emoji)}
+	
+        if(message.content.includes(word)){
+	message.react(emoji)}
+	});
 
 
 
