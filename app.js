@@ -178,10 +178,9 @@ let emoji = message.guild.emojis.find("name", "HUHypeSquad")
 	 message.react(emoji)}
 	
 const cuvant = ["HYPE"];
-if( cuvant(cuv => message.content.includes(cuv)) ) {
-    var emoji = message.guild.emojis.find("name", "HUHypeSquad");
     
-message.react(emoji);
+      if(message.content.includes(cuvant)){
+    message.react(emoji)
 }
 	});
 
