@@ -177,7 +177,7 @@ let emoji = message.guild.emojis.find("name", "HUHypeSquad")
 	if(message.channel.id === "409293338332889107"){
 	 message.react(emoji)}
 	
-const cuvant = ["HYPE"];
+const cuvant = ["HYPE", "hype", "Hype"];
     
       if(message.content.includes(cuvant)){
     message.react(emoji)
