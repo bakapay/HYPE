@@ -17,8 +17,8 @@ client.on("guildMemberBan", member => {
 
 client.on("guildMemberAdd", member => {
   client.channels.get("409293635704848394").send("[+] " + member + ".")
-  let defaultrole = member.guild.roles.find("name", "Hypers")
-  let default2role = member.guild.roles.find("name", "safe")
+  let defaultrole = member.guild.roles.find("name", "🔥 | Hypers")
+  let default2role = member.guild.roles.find("name", "Hype - SafeRole")
   member.addRole(defaultrole)
   member.addRole(default2role)
 });
