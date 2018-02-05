@@ -174,12 +174,15 @@ const embed = new Discord.RichEmbed()
 
 client.on("message", message => {
 let emoji = message.guild.emojis.find("name", "HUHypeSquad")
-let word = ["HYPE", "hype", "Hype", "HypeUniverse", "HYPEUNIVERSE", "hypeuniverse"];
 	if(message.channel.id === "409293338332889107"){
 	 message.react(emoji)}
 	
-        if(message.content.includes(word)){
-	message.react(emoji)}
+const cuvant = ["HYPE"];
+if( cuvant(cuv => message.content.includes(cuv)) ) {
+    var emoji = message.guild.emojis.find("name", "HUHypeSquad");
+    
+message.react(emoji);
+}
 	});
 
 
