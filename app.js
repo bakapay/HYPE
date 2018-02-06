@@ -124,11 +124,11 @@ const embed = new Discord.RichEmbed()
 });
 
 client.on("message", message => {
-let emoji = message.guild.emojis.find("name", "HUHypeSquad")
+if(message.channel.type != "dm"){
+let emoji = client.guilds.find("HYPEUNIVERSE 🔥").emojis.find("name", "HUHypeSquad")
 const cuvant = ["HYPE"];
 const cuvant2 = ["Hype"];
 const cuvant3 = ["hype"]
-if(message.channel.type != "dm"){
 if(message.content.includes(cuvant) || message.content.includes(cuvant2) || message.content.includes(cuvant3)){
 message.react(emoji)}}
 });
