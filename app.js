@@ -12,6 +12,9 @@ client.on("guildMemberAdd", member => {
   let default2role = member.guild.roles.find("name", "Hype - SafeRole")
   member.addRole(defaultrole)
   member.addRole(default2role)
+member.send("Eyyy, welcome to our server, **HYPEUNIVERSE**.").then(
+member.send("• Our server includes capable and responsible staff.\n• A custom credit system and language selector.\n• Experienced administrators on this platform.")).then(
+member.send("**We are glad that you have chosen our server from all that exist on discord.**\n:link: If you want to help the server, you can invite your friends using this link - https://discord.gg/ShjcYXK"))
 });
 
 client.on("message", message => {
@@ -124,20 +127,12 @@ const embed = new Discord.RichEmbed()
 });
 
 client.on("message", message => {
-let emoji = client.guilds.find("HYPEUNIVERSE 🔥").emojis.get("409416176477929483")
+let emoji = message.guild.emojis.find("name", "HUHypeSquad")
 const cuvant = ["HYPE"];
 const cuvant2 = ["Hype"];
 const cuvant3 = ["hype"]
 if(message.content.includes(cuvant) || message.content.includes(cuvant2) || message.content.includes(cuvant3)){
 message.react(emoji)}
 });
-
-client.on("guildMemberAdd", member => {
-member.send("Eyyy, welcome to our server, **HYPEUNIVERSE**.").then(
-member.send("• Our server includes capable and responsible staff.\n• A custom credit system and language selector.\n• Experienced administrators on this platform.")).then(
-member.send("**We are glad that you have chosen our server from all that exist on discord.**\n:link: If you want to help the server, you can invite your friends using this link - https://discord.gg/ShjcYXK"))
-});
-
-
 
 client.login("NDA5MzcyODcwMjU5NjM4Mjcz.DVdpxw.IDql-6-5uGkCM8Z9gtFVGUcLnmk");
