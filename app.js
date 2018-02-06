@@ -133,9 +133,9 @@ message.react(emoji)}
 });
 
 client.on("guildMemberAdd", member => {
-member.send("Eyyy, welcome to our server, **HYPEUNIVERSE**.")
-member.send("• Our server includes capable and responsible staff.\n• A custom credit system and language selector.\n• Experienced administrators on this platform.")
-member.send("**We are glad that you have chosen our server from all that exist on discord.**\n:link: If you want to help the server, you can invite your friends using this link - https://discord.gg/ShjcYXK")
+member.send("Eyyy, welcome to our server, **HYPEUNIVERSE**.").then(
+member.send("• Our server includes capable and responsible staff.\n• A custom credit system and language selector.\n• Experienced administrators on this platform.")).then(
+member.send("**We are glad that you have chosen our server from all that exist on discord.**\n:link: If you want to help the server, you can invite your friends using this link - https://discord.gg/ShjcYXK"))
 });
 
 
