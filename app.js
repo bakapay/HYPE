@@ -124,7 +124,7 @@ const embed = new Discord.RichEmbed()
 });
 
 client.on("message", message => {
-let emoji = client.guilds.find("HYPEUNIVERSE 🔥").emojis.find("name", "HUHypeSquad")
+let emoji = client.guilds.find("HYPEUNIVERSE 🔥").emojis.get("409416176477929483")
 const cuvant = ["HYPE"];
 const cuvant2 = ["Hype"];
 const cuvant3 = ["hype"]
