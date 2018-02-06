@@ -7,16 +7,7 @@ client.on('ready', () => {
 	client.user.setGame("discord.me/hypeuniverse", "https://www.twitch.tv/drkillerxd")
 });
 
-client.on("guildMemberRemove", member => {
-  client.channels.get("409293635704848394").send("[-] " + member + ".")
-});
-
-client.on("guildMemberBan", member => {
-  client.channels.get("409293635704848394").send("[x] " + member + ".")
-});
-
 client.on("guildMemberAdd", member => {
-  client.channels.get("409293635704848394").send("[+] " + member + ".")
   let defaultrole = member.guild.roles.find("name", "🔥 | Hypers")
   let default2role = member.guild.roles.find("name", "Hype - SafeRole")
   member.addRole(defaultrole)
@@ -25,19 +16,19 @@ client.on("guildMemberAdd", member => {
 
 client.on("message", message => {
 if(message.content.startsWith("/acceptat")){
-  if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("nu ai acces.")
+  if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("you don't have the correct permission.")
 
   let member = message.mentions.members.first();
-  if (!member) return message.reply("trebuie să menționezi persoana pe care vrei să o accepți.")
-  let thelper = message.guild.roles.find("name", "Hype - Testers")
-  let partner = message.guild.roles.find("name", "Server Manager")
+  if (!member) return message.reply("you must.")
+  let thelper = message.guild.roles.find("name", "💰 | Hype - Testers")
+  let partner = message.guild.roles.find("name", "🏆 | Server Manager")
   
-  if(message.channel.id === "409294069282504705"){
-   client.channels.get("409294069282504705").send(`Felicitări, ${member}. Cererea ta de parteneriat a fost acceptată de către ${message.author}.`)
+  if(message.channel.id === "409294069282504705" || message.channel.id === "410490044130918400"){
+   client.channels.get("409294069282504705").send(`:tada: Congratulations, ${member}. Your partnership application has been accepted by ${message.author}.`)
    member.addRole(partner.id)}
    
-  if(message.channel.id === "409294041734316032"){
-   client.channels.get("409294041734316032").send(`Felicitări, ${member}. Cererea ta de grad a fost acceptată de către ${message.author}.`)
+  if(message.channel.id === "409294041734316032" || message.channel.id === "410489978502774785"){
+   client.channels.get("409294041734316032").send(`:tada: Congratulations, ${member}. Your staff application has been accepted by ${message.author}.`)
   member.addRole(thelper.id)}
  
   message.delete()
@@ -48,7 +39,7 @@ client.on("message", message => {
 if(message.content.startsWith("/color")){
 let arg1 = message.content.split(" ").slice(0)
 let arg = arg1[1]
-if(!arg || arg === "list") return message.author.send("**==== CULORI DISPONIBILE ====**\n**/color yellow** - galben\n**/color red** - rosu\n**/color blue** - albastru\n**/color purple** - violet\n**/color green** - verde\n**/color golden** - auriu\n**/color black** - negru\n**/color white** - alb\n**/color gray** gri\n**/color pink** - roz\n Dacă folosiți comanda **/color none** , toate culorile deținute vor fi scoase.")
+if(!arg || arg === "list") return message.author.send("**==== AVAILABLE COLORS ====**\n**/color yellow** - Yellow\n**/color red** - Red\n**/color blue** - Blue\n**/color purple** - Purple\n**/color green** - Green\n**/color golden** - Golden\n**/color black** - Black\n**/color white** - White\n**/color gray** Gray\n**/color pink** - Pink\nIf you use the **/color none** command, all the colors you own will be removed.")
 let sender = message.author
 let yellow = message.guild.roles.find("name", "yellow");
 let red = message.guild.roles.find("name", "red");
@@ -116,46 +107,6 @@ message.channel.send(":ballot_box_with_check:")}
 });
 
 client.on("message", message => {
-	if(message.content.startsWith("/leave")){
-if(message.member.hasPermission('MANAGE_SERVER')) return message.reply("detii o functie destul de mare, mai bine **nu ai parasi** serverul.")
-        let kickMember = message.author
-	kickMember.send("Ai iesit de pe serverul **HYPEUNIVERSE**, daca vrei sa revii pe server, poti folosi link-ul de mai jos. \n:link: https://discord.gg/t6HGuCe").then(
-  setTimeout(() => { 
-	message.guild.member(kickMember).kick()
-        }, 1000))
-}	
-});
-
-client.on("message", message => {
-	if(message.content.startsWith("/report")){
-	   
-let member = message.mentions.members.first();
-let motiv1 = message.content.split(" ").slice(1)
-let dovada1 = message.content.split(" ").slice(2)
-
-let motiv = motiv1[1]
-let dovada = dovada1[1]
-
-if(!member) return message.reply("trebuie sa **mentionezi** persoana reclamata.")
-if(!motiv) return message.reply("trebuie sa **prezinti** un motiv, obligatoriu sa fie compus **dintr-un cuvant**.")
-if(!dovada) return message.reply("trebuie sa prezinti si o **dovada**, obligatoriu sa fie un **link**.")
-	
-let report = new Discord.RichEmbed()
-.setAuthor(member.user.username, member.user.avatarURL)
-.setTitle("RECLAMATIE | HYPEUNIVERSE")
-.addField("Utilizator", member.user.username, true)
-.addField("Motiv", motiv, true)
-.addField("Dovada", "[CLICK](" + dovada + ")", true)
-.setFooter("Reclamat de catre " + message.author.username)
-.setTimestamp()
-.setColor(0x0896c7)
-
-client.channels.get("409294199415111681").sendEmbed(report)
-message.delete();
-	   }
-	   });
-
-client.on("message", message => {
 	if(message.content.startsWith("/serverinfo")){
 const embed = new Discord.RichEmbed()
 	.setAuthor(message.guild, message.guild.iconURL)
@@ -179,6 +130,12 @@ const cuvant2 = ["Hype"];
 const cuvant3 = ["hype"]
 if(message.content.includes(cuvant) || message.content.includes(cuvant2) || message.content.includes(cuvant3)){
 message.react(emoji)}
+});
+
+client.on("guildMemberAdd", member => {
+member.send("Eyyy, welcome to our server, **HYPEUNIVERSE**.")
+member.send("• Our server includes capable and responsible staff.\n• A custom credit system and language selector.\n• Experienced administrators on this platform.")
+member.send("**We are glad that you have chosen our server from all that exist on discord.**\n:link: If you want to help the server, you can invite your friends using this link - https://discord.gg/ShjcYXK")
 });
 
 
