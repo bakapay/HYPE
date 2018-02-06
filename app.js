@@ -127,7 +127,7 @@ const embed = new Discord.RichEmbed()
 });
 
 client.on("message", message => {
-if(message.guild.id === "409020225770487810"){
+if(message.channel.type != "dm"){
 let emoji = message.guild.emojis.find("name", "HUHypeSquad")
 const cuvant = ["HYPE"];
 const cuvant2 = ["Hype"];
