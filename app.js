@@ -127,12 +127,13 @@ const embed = new Discord.RichEmbed()
 });
 
 client.on("message", message => {
+if(message.guild.id === "409020225770487810"){
 let emoji = message.guild.emojis.find("name", "HUHypeSquad")
 const cuvant = ["HYPE"];
 const cuvant2 = ["Hype"];
 const cuvant3 = ["hype"]
 if(message.content.includes(cuvant) || message.content.includes(cuvant2) || message.content.includes(cuvant3)){
-message.react(emoji)}
+message.react(emoji)}}
 });
 
 client.login("NDA5MzcyODcwMjU5NjM4Mjcz.DVdpxw.IDql-6-5uGkCM8Z9gtFVGUcLnmk");
