@@ -13,7 +13,7 @@ client.on("guildMemberAdd", member => {
   member.addRole(defaultrole)
   member.addRole(default2role)
 member.send("Eyyy, welcome to our server, **HYPEUNIVERSE**.").then(
-member.send("• Our server includes capable and responsible staff.\n• A custom credit system and language selector.\n• Experienced administrators on this platform.")).then(
+member.send("• Our server includes capable and responsible staff.\n• A custom credit system in creation and language selector.\n• Experienced administrators on this platform.")).then(
 member.send("**We are glad that you have chosen our server from all that exist on discord.**\n:link: If you want to help the server, you can invite your friends using this link - https://discord.gg/ShjcYXK"))
 });
 
@@ -26,11 +26,11 @@ if(message.content.startsWith("/acceptat")){
   let thelper = message.guild.roles.find("name", "💰 | Hype - Testers")
   let partner = message.guild.roles.find("name", "🏆 | Server Manager")
   
-  if(message.channel.id === "409294069282504705" || message.channel.id === "410490044130918400"){
+  if(message.channel.id === "409294069282504705" || message.channel.id === "410814816996032523"){
    client.channels.get("409294069282504705").send(`:tada: Congratulations, ${member}. Your partnership application has been accepted by ${message.author}.`)
    member.addRole(partner.id)}
    
-  if(message.channel.id === "409294041734316032" || message.channel.id === "410489978502774785"){
+  if(message.channel.id === "409294041734316032" || message.channel.id === "410812543209177096"){
    client.channels.get("409294041734316032").send(`:tada: Congratulations, ${member}. Your staff application has been accepted by ${message.author}.`)
   member.addRole(thelper.id)}
  
@@ -72,6 +72,20 @@ if(message.content.startsWith("/send")){
 	message.channel.send(mesaj).then(
     message.delete() 
 )}
+});
+
+client.on("message", message => {
+let sender = message.author
+let romanian = message.guild.roles.find("name", "HYPE - Romanian")
+let english = message.guild.roles.find("name", "HYPE - English")
+if(message.channel.id === "410817115793391617"){
+if(message.content.startsWith("/ro")){
+message.guild.member(sender).addRole(romanian)}
+	
+if(message.content.startsWith("/en")){
+message.guild.member(sender).addRole(english)}
+	message.delete()
+}
 });
 
 client.login("NDA5MzcyODcwMjU5NjM4Mjcz.DVdpxw.IDql-6-5uGkCM8Z9gtFVGUcLnmk");
