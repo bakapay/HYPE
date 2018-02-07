@@ -22,7 +22,7 @@ if(message.content.startsWith("/acceptat")){
   if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("you don't have the correct permission.")
 
   let member = message.mentions.members.first();
-  if (!member) return message.reply("you must.")
+  if (!member) return message.reply("you must mention a user.")
   let thelper = message.guild.roles.find("name", "💰 | Hype - Testers")
   let partner = message.guild.roles.find("name", "🏆 | Server Manager")
   
@@ -68,8 +68,8 @@ message.react(emoji)}}
 client.on("message", message => {
 if(message.content.startsWith("/send")){
   if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("you don't have the correct permission.")
-	let mesaj = message.content.split(" ").slice(1);
-	message.channel.send(mesaj[1])
+	let mesaj = message.content.slice(5);
+	message.channel.send(mesaj)
     message.delete()
 }
 });
