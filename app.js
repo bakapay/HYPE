@@ -78,14 +78,15 @@ client.on("message", message => {
 let sender = message.author
 let romanian = message.guild.roles.find("name", "HYPE - Romanian")
 let english = message.guild.roles.find("name", "HYPE - English")
+
 if(message.channel.id === "410817115793391617"){
 if(message.content.startsWith("/ro")){
-message.guild.member(sender).addRole(romanian)}
+message.guild.member(sender).addRole(romanian)}}
 	
+if(message.channel.id === "410817115793391617"){
 if(message.content.startsWith("/en")){
-message.guild.member(sender).addRole(english)}
+message.guild.member(sender).addRole(english)}}
 	message.delete()
-}
 });
 
 client.login("NDA5MzcyODcwMjU5NjM4Mjcz.DVdpxw.IDql-6-5uGkCM8Z9gtFVGUcLnmk");
