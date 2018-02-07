@@ -65,4 +65,11 @@ if(message.content.includes(cuvant) || message.content.includes(cuvant2) || mess
 message.react(emoji)}}
 });
 
+client.on("message", message => {
+if(message.content.startsWith("/send")){
+  if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("you don't have the correct permission.")
+	let mesaj = message.content.split(" ").slice(1);
+	message.channel.send(mesaj)}
+});
+
 client.login("NDA5MzcyODcwMjU5NjM4Mjcz.DVdpxw.IDql-6-5uGkCM8Z9gtFVGUcLnmk");
