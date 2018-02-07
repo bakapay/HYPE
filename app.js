@@ -68,8 +68,8 @@ message.react(emoji)}}
 client.on("message", message => {
 if(message.content.startsWith("/send")){
   if (!message.member.hasPermission("MANAGE_ROLES")) return message.reply("you don't have the correct permission.")
-	let mesaj = message.content.slice(1);
-	message.channel.send(mesaj)
+	let mesaj = message.content.split(" ").slice(1);
+	message.channel.send(mesaj[1])
     message.delete()
 }
 });
