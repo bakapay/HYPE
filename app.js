@@ -9,10 +9,11 @@ client.on('ready', () => {
 
 client.on("guildMemberAdd", member => {
 let emoji = message.guild.emojis.find("name", "HUHypeSquad")
-let defaultrole = member.guild.roles.find("name", "⏰ HYPE - Awaiting")
+let defaultrole = member.guild.roles.find("name", "⏰ | HYPE - Awaiting")
 let default2role = member.guild.roles.find("name", "Hype - SafeRole")
   member.addRole(defaultrole)
   member.addRole(default2role)
+client.channels.find("409759986172821504").send("[+] " + message.author.username)
 member.send(emoji + " Eyyy, welcome to our server, **HYPEUNIVERSE**.").then(
 member.send("**For first, you should check out the channel **#lobby.**")).then(
 member.send("• Our server includes capable and responsible staff.\n• A custom credit system in creation and language selector.\n• Experienced administrators on this platform.")).then(
