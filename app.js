@@ -80,7 +80,7 @@ client.on("message", message => {
 let sender = message.author
 let romanian = message.channel.guild.roles.find("name", "HYPE - Romanian")
 let english = message.channel.guild.roles.find("name", "HYPE - English")
-let awaiting = message.channel.guild.roles.find("name", "⏰ HYPE - Awaiting")
+let awaiting = message.channel.guild.roles.find("name", "⏰ | HYPE - Awaiting")
 let hypers = message.channel.guild.roles.find("name", "🔥 | Hypers")
 let emoji2 = message.channel.guild.emojis.find("name", "HUnanamiKarenWave")
 
