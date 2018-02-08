@@ -78,11 +78,11 @@ if(message.content.startsWith("/send")){
 
 client.on("message", message => {
 let sender = message.author
-let romanian = message.guild.roles.find("name", "HYPE - Romanian")
-let english = message.guild.roles.find("name", "HYPE - English")
-let awaiting = message.guild.roles.find("name", "⏰ HYPE - Awaiting")
-let hypers = message.guild.roles.find("name", "🔥 | Hypers")
-let emoji2 = message.guild.emojis.find("name", "HUnanamiKarenWave")
+let romanian = message.channel.guild.roles.find("name", "HYPE - Romanian")
+let english = message.channel.guild.roles.find("name", "HYPE - English")
+let awaiting = message.channel.guild.roles.find("name", "⏰ HYPE - Awaiting")
+let hypers = message.channel.guild.roles.find("name", "🔥 | Hypers")
+let emoji2 = message.channel.guild.emojis.find("name", "HUnanamiKarenWave")
 
 if(message.channel.id === "410817115793391617"){
 if(message.content.startsWith("/romanian")){
