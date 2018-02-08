@@ -102,7 +102,7 @@ client.channels.get("410812137007743003").send(emoji2 + " [+] **" + message.auth
 });
 
 client.on("message", message => {
-let emoji = message.guild.emojis.find("name", "HUHypeSquad")
+let emoji = message.channel.guild.emojis.find("name", "HUHypeSquad")
 if(message.author.id === "390155343373533195"){
 if(message.content.startsWith("msg1")){
 client.channels.get("409293635704848394").send(emoji + " Momentan, pe server sunt online **" + message.guild.members.filter(m => m.presence.status !== 'offline').size + "** membri.")
