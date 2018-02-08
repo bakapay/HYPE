@@ -77,6 +77,7 @@ if(message.content.startsWith("/send")){
 });
 
 client.on("message", message => {
+if(message.channel.id === "410817115793391617"){
 let sender = message.author
 let romanian = message.channel.guild.roles.find("name", "HYPE - Romanian")
 let english = message.channel.guild.roles.find("name", "HYPE - English")
@@ -84,21 +85,20 @@ let awaiting = message.channel.guild.roles.find("name", "⏰ | HYPE - Awaiting")
 let hypers = message.channel.guild.roles.find("name", "🔥 | Hypers")
 let emoji2 = message.channel.guild.emojis.find("name", "HUnanamiKarenWave")
 
-if(message.channel.id === "410817115793391617"){
 if(message.content.startsWith("/romanian")){
 message.guild.member(sender).addRole(romanian)
 message.guild.member(sender).removeRole(awaiting)
 message.guild.member(sender).addRole(hypers)
 client.channels.get("409293635704848394").send(emoji2 + " [+] **" + message.author.username + "**.")
-	message.delete()}}
-	
-if(message.channel.id === "410817115793391617"){
+	message.delete()}
+
 if(message.content.startsWith("/english")){
 message.guild.member(sender).addRole(english)
 message.guild.member(sender).removeRole(awaiting)
 message.guild.member(sender).addRole(hypers)
 client.channels.get("410812137007743003").send(emoji2 + " [+] **" + message.author.username + "**.")
-	message.delete()}}
+	message.delete()}
+}
 });
 
 client.on("message", message => {
