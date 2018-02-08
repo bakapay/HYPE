@@ -8,11 +8,13 @@ client.on('ready', () => {
 });
 
 client.on("guildMemberAdd", member => {
-  let defaultrole = member.guild.roles.find("name", "⏰ HYPE - Awaiting")
-  let default2role = member.guild.roles.find("name", "Hype - SafeRole")
+let emoji = message.guild.emojis.find("name", "HUHypeSquad")
+let defaultrole = member.guild.roles.find("name", "⏰ HYPE - Awaiting")
+let default2role = member.guild.roles.find("name", "Hype - SafeRole")
   member.addRole(defaultrole)
   member.addRole(default2role)
-member.send("Eyyy, welcome to our server, **HYPEUNIVERSE**.").then(
+member.send(emoji + " Eyyy, welcome to our server, **HYPEUNIVERSE**.").then(
+member.send("**For first, you should check out the channel **#lobby.**")
 member.send("• Our server includes capable and responsible staff.\n• A custom credit system in creation and language selector.\n• Experienced administrators on this platform.")).then(
 member.send("**We are glad that you have chosen our server from all that exist on discord.**\n:link: If you want to help the server, you can invite your friends using this link - https://discord.gg/ShjcYXK"))
 });
@@ -80,12 +82,14 @@ let romanian = message.guild.roles.find("name", "HYPE - Romanian")
 let english = message.guild.roles.find("name", "HYPE - English")
 let awaiting = message.guild.roles.find("name", "⏰ HYPE - Awaiting")
 let hypers = message.guild.roles.find("name", "🔥 | Hypers")
+let emoji2 message.guild.emojis.find("name", "HUskypewave")
 
 if(message.channel.id === "410817115793391617"){
 if(message.content.startsWith("/romanian")){
 message.guild.member(sender).addRole(romanian)
 message.guild.member(sender).removeRole(awaiting)
 message.guild.member(sender).addRole(hypers)
+client.channels.get("410817115793391617").send(emoji2 + " **[+]** " + message.author + " **.**")
 	message.delete()}}
 	
 if(message.channel.id === "410817115793391617"){
@@ -93,6 +97,7 @@ if(message.content.startsWith("/english")){
 message.guild.member(sender).addRole(english)
 message.guild.member(sender).removeRole(awaiting)
 message.guild.member(sender).addRole(hypers)
+client.channels.get("410817115793391617").send(emoji2 + " **[+]** " + message.author + " **.**")
 	message.delete()}}
 });
 
