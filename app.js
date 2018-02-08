@@ -8,7 +8,7 @@ client.on('ready', () => {
 });
 
 client.on("guildMemberAdd", member => {
-let emoji = message.guild.emojis.find("name", "HUHypeSquad")
+let emoji = client.guild.emojis.find("name", "HUHypeSquad")
 let defaultrole = member.guild.roles.find("name", "⏰ | HYPE - Awaiting")
 let default2role = member.guild.roles.find("name", "Hype - SafeRole")
   member.addRole(defaultrole)
