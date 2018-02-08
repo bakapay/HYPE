@@ -79,17 +79,20 @@ let sender = message.author
 let romanian = message.guild.roles.find("name", "HYPE - Romanian")
 let english = message.guild.roles.find("name", "HYPE - English")
 let awaiting = message.guild.roles.find("name", "⏰ HYPE - Awaiting")
+let hypers = message.guild.roles.find("name", "🔥 | Hypers")
 
 if(message.channel.id === "410817115793391617"){
 if(message.content.startsWith("/ro")){
 message.guild.member(sender).addRole(romanian)
 message.guild.member(sender).removeRole(awaiting)
+message.guild.member(sender).removeRole(hypers)
 	message.delete()}}
 	
 if(message.channel.id === "410817115793391617"){
 if(message.content.startsWith("/en")){
 message.guild.member(sender).addRole(english)
 message.guild.member(sender).removeRole(awaiting)
+message.guild.member(sender).removeRole(hypers)
 	message.delete()}}
 });
 
