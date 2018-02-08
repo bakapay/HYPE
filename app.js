@@ -14,7 +14,7 @@ let default2role = member.guild.roles.find("name", "Hype - SafeRole")
   member.addRole(defaultrole)
   member.addRole(default2role)
 member.send(emoji + " Eyyy, welcome to our server, **HYPEUNIVERSE**.").then(
-member.send("**For first, you should check out the channel **#lobby.**")
+member.send("**For first, you should check out the channel **#lobby.**")).then(
 member.send("• Our server includes capable and responsible staff.\n• A custom credit system in creation and language selector.\n• Experienced administrators on this platform.")).then(
 member.send("**We are glad that you have chosen our server from all that exist on discord.**\n:link: If you want to help the server, you can invite your friends using this link - https://discord.gg/ShjcYXK"))
 });
