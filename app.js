@@ -89,7 +89,7 @@ if(message.content.startsWith("/romanian")){
 message.guild.member(sender).addRole(romanian)
 message.guild.member(sender).removeRole(awaiting)
 message.guild.member(sender).addRole(hypers)
-client.channels.get("410817115793391617").send(emoji2 + " **[+]** " + message.author + " **.**")
+client.channels.get("409293635704848394").send(emoji2 + " **[+]** " + message.author + " **.**")
 	message.delete()}}
 	
 if(message.channel.id === "410817115793391617"){
@@ -97,7 +97,7 @@ if(message.content.startsWith("/english")){
 message.guild.member(sender).addRole(english)
 message.guild.member(sender).removeRole(awaiting)
 message.guild.member(sender).addRole(hypers)
-client.channels.get("410817115793391617").send(emoji2 + " **[+]** " + message.author + " **.**")
+client.channels.get("410812137007743003").send(emoji2 + " **[+]** " + message.author + " **.**")
 	message.delete()}}
 });
 
